@@ -1,1 +1,1 @@
-# openai_DDDQN
+#OpenAI Atari solved with DDDQN Pytorch
