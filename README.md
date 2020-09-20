@@ -18,17 +18,31 @@ Like the standard DQN architecture, we have convolutional layers to process game
 [soruce:https://www.freecodecamp.org/news/improvements-in-deep-q-learning-dueling-double-dqn-prioritized-experience-replay-and-fixed-58b130cc5682/]
 
 ### Softmax action selection
-During training and testing of the algorithm I found the best way to takle exploration - exploitation dilemma is to use a softmax action selection with decreasing temperature.<br/>
-Although epsilon greedy action selection is an effective and popular means of balancing exploration - exploitation in reinforcement learning, one drawback is that when it explores it chooses equally among all actions. This drawback can be corrected by using a probability based action selection algoritm.<br/>
+During training and testing of the algorithm I found the best way to tackle exploration - exploitation dilemma is to use a softmax action selection with decreasing temperature.<br/>
+Although epsilon greedy action selection is an effective and popular means of balancing exploration - exploitation in reinforcement learning, one drawback is that when it explores it chooses equally among all actions. This drawback can be corrected by using a probability based action selection algorithm.<br/>
 **The softmax action selection formula**<br/>
 ![](gifs/softmax.png)<br/>
 [source: see research papers below]<br/>
-With the temperature continously dropping, the action selection drop from 80% exploration down to aprox. 10% exproration at the end of the training. The agent learn much faster given that even if the action selection is not greedy, it is based on probabilities.
+With the temperature continuously dropping, the action selection drops from 80% exploration down to aprox. 10% exploration at the end of the training. The agent learns much faster given that even if the action selection is not greedy, it is based on probabilities.
 
 ### Prioritised experience replay (PER)
-Experience replay lets reinforcement learning agents remember and reuse experiences from the past. Without prioritisation, experience transitions were uniformly sampled from a replay memory. However, this approach simply replays transitions at the same frequency that they were originally experienced, regardless of their significance. The Prioritised experience replay essentially gives weights to different experiances based on their importance in the elarning process, speeding up the learning process and make it more efficient. PER, generally, can be achived in two ways: ranking and stochastic prioritisation <br/>
+Experience replay lets reinforcement learning agents remember and reuse experiences from the past. Without prioritisation, experience transitions were uniformly sampled from a replay memory. However, this approach simply replays transitions at the same frequency that they were originally experienced, regardless of their significance. The Prioritised experience replay essentially gives weights to different experiences based on their importance in the learning process, speeding up the learning process and making it more efficient. PER, generally, can be achieved in two ways: ranking and stochastic prioritisation. <br/>
 ![](gifs/PER.png)<br/>
 [source:see research papers below]
+
+## Results
+
+![](plots/Pong_boltzmann_scores.png)<br/>
+![](plots/Pong_loss.png)<br/>
+
+### Prerequisites
+* OpenAI gym
+* Numpy
+* Pytorch
+* Collections
+* Cv2
+* Matplotlib
+
 
 ## Links to research papers and other repositories
 Base structure: https://web.stanford.edu/class/psych209/Readings/MnihEtAlHassibis15NatureControlDeepRL.pdf <br/>
