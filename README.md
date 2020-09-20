@@ -1,7 +1,8 @@
 # Double Dueling Deep Q-Learn with Pytorch
 
-## Episode 0                                                Epsiode 350
-![](gifs/Episode_0.gif) ![](gifs/Episode_350.gif)
+**Episode 0          |  Solarized Ocean**
+:-------------------------:|:-------------------------:
+![](gifs/Episode_0.gif)  |  ![](gifs/Episode_350.gif)
 
 ## OpenAI Atari solved with DDDQN Pytorch
 This code is an example of Double Dueling Deep Q-Learn network solving the OpenAI Atari environment: **Pong**. The following methods were implemented in this code. <br/>
