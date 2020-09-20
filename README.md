@@ -6,6 +6,11 @@
 ## OpenAI Atari solved with DDDQN Pytorch
 This code is an example of Double Dueling Deep Q-Learn network solving the OpenAI Atari environment: Pong. The following methods were used during in the code.
 
+### Dueling Double Deep Q - learning
+Like the standard DQN architecture, we have convolutional layers to process game-play frames. From there, we split the network into two separate streams, one for estimating the state-value and the other for estimating state-dependent action advantages. After the two streams, the last module of the network combines the state-value and advantage outputs. [source: https://towardsdatascience.com/dueling-deep-q-networks-81ffab672751] <br/>
+![](gifs/DDDQN.png)<br/>
+
+
 ### Softmax action selection
 During training and testing of the algorithm I found the best way to takle exploration - exploitation dilemma is to use a softmax action selection with decreasing temperature.<br/>
 Although epsilon greedy action selection is an effective and popular means of balancing exploration - exploitation in reinforcement learning, one drawback is that when it explores it chooses equally among all actions. This drawback can be corrected by using a probability based action selection algoritm.<br/>
