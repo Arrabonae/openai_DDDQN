@@ -20,7 +20,7 @@ During training and testing of the algorithm I found the best way to takle explo
 Although epsilon greedy action selection is an effective and popular means of balancing exploration - exploitation in reinforcement learning, one drawback is that when it explores it chooses equally among all actions. This drawback can be corrected by using a probability based action selection algoritm.<br/>
 **The softmax action selection formula**<br/>
 ![](gifs/softmax.png)<br/>
-[source: see research papers below]
+[source: see research papers below]<br/>
 With the temperature continously dropping, the action selection drop from 80% exploration down to aprox. 10% exproration at the end of the training. The agent learn much faster given that even if the action selection is not greedy, it is based on probabilities.
 
 ### Prioritised experience replay (PER)
