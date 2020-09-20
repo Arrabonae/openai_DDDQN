@@ -2,7 +2,7 @@
 
 
 **Episode 0**          |  **Episode 350**
-:--------------------------------------------------:|:--------------------------------------------------:
+:--------------------:|:--------------------:
 ![](gifs/Episode_0.gif)  |  ![](gifs/Episode_350.gif)
 
 ## OpenAI Atari solved with DDDQN Pytorch
@@ -30,13 +30,33 @@ Experience replay lets reinforcement learning agents remember and reuse experien
 ![](gifs/PER.png)<br/>
 [source:see research papers below]
 
-## Hyperparementers and results
+## Results
 There are three metrics which I used to monitor the performance of the Agent:
 1. The Softmax action selection (Boltzmann score, "Epsilon '' on the left y axis below) shows what was the exploration rate during training. This Doesn't mean that the Agent selected a random action at the beginning of the training session, but it shows how many times the Agent chooses other than the most-optimal Action. 
 2. Scores: in Pong the maximum score is 21 points, while the lowest score one can receive is -21. 
 3. Loss: As part of the double architecture, I sat the weight-share between Primary network and Target network to 10,000 steps. As we can see on the Loss values, this frequency proven helpful to minimize the Loss. 
 
 ![](plots/Pong_boltzmann_scores.png) ![](plots/Pong_loss.png)<br/>
+
+### Notable Hyperparameters
+- Weight transfer between Primary and Target networks: 10,000 Steps
+- Episodes Training: 350
+- Batch size: 32
+- Temperature Max: 0.2
+- Temperature Min: 0.0004
+- Temperature Decay 1: 1e-6
+- Temperature Decay 2: 1e-8
+- Learning Rate: 0.0001
+- Alpha (PER related): 0.7
+- Beta (PER related): 0.4
+- Beta Decay (PER related): 0.001
+- Memory Size: 70,000
+- Loss function: Smooth L1 Loss (a.k.a Huber Loss) [See: https://pytorch.org/docs/stable/generated/torch.nn.SmoothL1Loss.html]
+![](gifs/huber.png)<br/>
+- Weight Initialization: bias = false for Convolutional Layers; while I used He initialization(fan out!) [See: https://pytorch.org/docs/stable/nn.init.html]
+![](gifs/he.png)<br/>
+
+I used RELU activation functions.
 
 ### Prerequisites
 * OpenAI gym
