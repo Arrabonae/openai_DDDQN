@@ -4,10 +4,14 @@
 ![](gifs/Episode_0.gif) ![](gifs/Episode_350.gif)
 
 ## OpenAI Atari solved with DDDQN Pytorch
-This code is an example of Double Dueling Deep Q-Learn network solving the OpenAI Atari environment: Pong. The following methods were used during in the code.
+This code is an example of Double Dueling Deep Q-Learn network solving the OpenAI Atari environment: <b> Pong <b/>. The following methods were implemented in this code. <br/>
+Basics of Q-learning: https://en.wikipedia.org/wiki/Q-learning <br/>
 
 ### Dueling Double Deep Q - learning
-Like the standard DQN architecture, we have convolutional layers to process game-play frames. From there, we split the network into two separate streams, one for estimating the state-value and the other for estimating state-dependent action advantages. After the two streams, the last module of the network combines the state-value and advantage outputs. [source: https://towardsdatascience.com/dueling-deep-q-networks-81ffab672751] <br/>
+Like the standard DQN architecture, we have convolutional layers to process game-play frames. From there, we split the network into two separate streams, one for estimating the state-value and the other for estimating state-dependent action advantages. After the two streams, the last module of the network combines the state-value and advantage outputs.<br/> [source: https://towardsdatascience.com/dueling-deep-q-networks-81ffab672751] <br/>
+<br/>
+<br/>
+Architecture
 ![](gifs/DDDQN.png)<br/>
 
 
