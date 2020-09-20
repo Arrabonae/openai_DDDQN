@@ -1,5 +1,8 @@
 # OpenAI Atari solved with DDDQN Pytorch
 
+
+![](gifs/Episode_0.gif.gif)
+
 Boltzmann exploration
 http://tokic.com/www/tokicm/publikationen/papers/AdaptiveEpsilonGreedyExploration.pdf
 
