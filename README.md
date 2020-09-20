@@ -30,10 +30,13 @@ Experience replay lets reinforcement learning agents remember and reuse experien
 ![](gifs/PER.png)<br/>
 [source:see research papers below]
 
-## Results
+## Hyperparementers and results
+There are three metrics which I used to monitor the performance of the Agent:
+1. The Softmax action selection (Boltzmann score, "Epsilon '' on the left y axis below) shows what was the exploration rate during training. This Doesn't mean that the Agent selected a random action at the beginning of the training session, but it shows how many times the Agent chooses other than the most-optimal Action. 
+2. Scores: in Pong the maximum score is 21 points, while the lowest score one can receive is -21. 
+3. Loss: As part of the double architecture, I sat the weight-share between Primary network and Target network to 10,000 steps. As we can see on the Loss values, this frequency proven helpful to minimize the Loss. 
 
-![](plots/Pong_boltzmann_scores.png)<br/>
-![](plots/Pong_loss.png)<br/>
+![](plots/Pong_boltzmann_scores.png) ![](plots/Pong_loss.png)<br/>
 
 ### Prerequisites
 * OpenAI gym
