@@ -8,6 +8,7 @@
 ## OpenAI Atari solved with DDDQN Pytorch
 This code is an example of Double Dueling Deep Q-Learn network solving the OpenAI Atari environment: **Pong**. The following methods were implemented in this code. <br/>
 Basics of Q-learning: https://en.wikipedia.org/wiki/Q-learning <br/>
+About the environment: https://gym.openai.com/envs/Pong-v0/ <b/>
 
 ### Dueling Double Deep Q - learning
 Like the standard DQN architecture, we have convolutional layers to process game-play frames. From there, we split the network into two separate streams, one for estimating the state-value and the other for estimating state-dependent action advantages. After the two streams, the last module of the network combines the state-value and advantage outputs.<br/> [source: https://towardsdatascience.com/dueling-deep-q-networks-81ffab672751] <br/>
@@ -32,7 +33,7 @@ Experience replay lets reinforcement learning agents remember and reuse experien
 
 ## Results
 There are three metrics which I used to monitor the performance of the Agent:
-1. The Softmax action selection (Boltzmann score, "Epsilon '' on the left y axis below) shows what was the exploration rate during training. This Doesn't mean that the Agent selected a random action at the beginning of the training session, but it shows how many times the Agent chooses other than the most-optimal Action. 
+1. The Softmax action selection (Boltzmann score, "epsilon" on the left y axis below) shows what was the exploration rate during training. This Doesn't mean that the Agent selected a random action at the beginning of the training session, but it shows how many times the Agent chooses other than the most-optimal Action. 
 2. Scores: in Pong the maximum score is 21 points, while the lowest score one can receive is -21. 
 3. Loss: As part of the double architecture, I sat the weight-share between Primary network and Target network to 10,000 steps. As we can see on the Loss values, this frequency proven helpful to minimize the Loss. 
 
