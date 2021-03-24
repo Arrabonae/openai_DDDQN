@@ -38,7 +38,7 @@ There are three metrics which I used to monitor the performance of the Agent:
 3. Loss: As part of the double architecture, I sat the weight-share between Primary network and Target network to 10,000 steps. As we can see on the Loss values, this frequency proven helpful to minimize the Loss. 
 
 ![](plots/Pong_boltzmann_scores.png) ![](plots/Pong_loss.png)<br/>
-As you can see fiom the scores, the Agent basically solved this environment at the end of the training period. 
+As you can see from the scores, the Agent basically solved this environment at the end of the training period. 
 
 ## Notable Hyperparameters
 - Weight transfer between Primary and Target networks: 10,000 Steps
